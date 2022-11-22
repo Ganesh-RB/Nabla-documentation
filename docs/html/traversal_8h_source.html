@@ -81,20 +81,31 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="sym_8h.html">sym.h</a>&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keywordtype">void</span> <a class="code" href="traversal_8h.html#a0d37c402d053dcab99ae56079b76f7be">traverse_gradient</a>(<a class="code" href="classStart.html">Start</a> *root);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keywordtype">void</span> <a class="code" href="traversal_8h.html#ae054de111552d87aece7e13bae4f1fd2">traverse_declarations</a>(<a class="code" href="classStart.html">Start</a> *root);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">void</span> <a class="code" href="traversal_8h.html#a93b1b8a7e028e05a08fc7cf924eac62d">traverse_operations</a>(<a class="code" href="classStart.html">Start</a> *root);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">char</span> <a class="code" href="traversal_8h.html#a127c14c07aad4a58bc3b3f1a893823cd">filename</a>[50];</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keywordtype">void</span> <a class="code" href="traversal_8h.html#a0d37c402d053dcab99ae56079b76f7be">traverse_gradient</a>(<a class="code" href="classStart.html">Start</a> *<a class="code" href="ast_8h.html#a65b43e4b3c74e00de693bcea66b70b34">root</a>);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordtype">void</span> <a class="code" href="traversal_8h.html#ae054de111552d87aece7e13bae4f1fd2">traverse_declarations</a>(<a class="code" href="classStart.html">Start</a> *<a class="code" href="ast_8h.html#a65b43e4b3c74e00de693bcea66b70b34">root</a>);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keywordtype">void</span> <a class="code" href="traversal_8h.html#a93b1b8a7e028e05a08fc7cf924eac62d">traverse_operations</a>(<a class="code" href="classStart.html">Start</a> *<a class="code" href="ast_8h.html#a65b43e4b3c74e00de693bcea66b70b34">root</a>);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keywordtype">int</span> <a class="code" href="traversal_8h.html#ad4d96e0fb3b0bb1e6b8e2f3b558c36e2">semantic_error</a>(std::string, <span class="keywordtype">int</span> a=0, <span class="keywordtype">int</span> b=0, <span class="keywordtype">bool</span> print_line=<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;std::string <a class="code" href="traversal_8h.html#a990db2275a6a1fdf258f346daa7b1786">get_line</a>( <span class="keywordtype">int</span> );</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="atraversal_8h_html_a127c14c07aad4a58bc3b3f1a893823cd"><div class="ttname"><a href="traversal_8h.html#a127c14c07aad4a58bc3b3f1a893823cd">filename</a></div><div class="ttdeci">char filename[50]</div></div>
 <div class="ttc" id="asym_8h_html"><div class="ttname"><a href="sym_8h.html">sym.h</a></div></div>
 <div class="ttc" id="aast_8h_html"><div class="ttname"><a href="ast_8h.html">ast.h</a></div></div>
-<div class="ttc" id="atraversal_8h_html_ae054de111552d87aece7e13bae4f1fd2"><div class="ttname"><a href="traversal_8h.html#ae054de111552d87aece7e13bae4f1fd2">traverse_declarations</a></div><div class="ttdeci">void traverse_declarations(Start *root)</div><div class="ttdef"><b>Definition:</b> traversal.cpp:54</div></div>
-<div class="ttc" id="atraversal_8h_html_a93b1b8a7e028e05a08fc7cf924eac62d"><div class="ttname"><a href="traversal_8h.html#a93b1b8a7e028e05a08fc7cf924eac62d">traverse_operations</a></div><div class="ttdeci">void traverse_operations(Start *root)</div><div class="ttdef"><b>Definition:</b> traversal.cpp:170</div></div>
-<div class="ttc" id="atraversal_8h_html_a0d37c402d053dcab99ae56079b76f7be"><div class="ttname"><a href="traversal_8h.html#a0d37c402d053dcab99ae56079b76f7be">traverse_gradient</a></div><div class="ttdeci">void traverse_gradient(Start *root)</div><div class="ttdef"><b>Definition:</b> traversal.cpp:227</div></div>
-<div class="ttc" id="aclassStart_html"><div class="ttname"><a href="classStart.html">Start</a></div><div class="ttdef"><b>Definition:</b> ast.h:86</div></div>
+<div class="ttc" id="aast_8h_html_a65b43e4b3c74e00de693bcea66b70b34"><div class="ttname"><a href="ast_8h.html#a65b43e4b3c74e00de693bcea66b70b34">root</a></div><div class="ttdeci">Start * root</div></div>
+<div class="ttc" id="atraversal_8h_html_ad4d96e0fb3b0bb1e6b8e2f3b558c36e2"><div class="ttname"><a href="traversal_8h.html#ad4d96e0fb3b0bb1e6b8e2f3b558c36e2">semantic_error</a></div><div class="ttdeci">int semantic_error(std::string, int a=0, int b=0, bool print_line=false)</div><div class="ttdef"><b>Definition:</b> traversal.cpp:354</div></div>
+<div class="ttc" id="atraversal_8h_html_a990db2275a6a1fdf258f346daa7b1786"><div class="ttname"><a href="traversal_8h.html#a990db2275a6a1fdf258f346daa7b1786">get_line</a></div><div class="ttdeci">std::string get_line(int)</div><div class="ttdef"><b>Definition:</b> traversal.cpp:377</div></div>
+<div class="ttc" id="atraversal_8h_html_ae054de111552d87aece7e13bae4f1fd2"><div class="ttname"><a href="traversal_8h.html#ae054de111552d87aece7e13bae4f1fd2">traverse_declarations</a></div><div class="ttdeci">void traverse_declarations(Start *root)</div><div class="ttdef"><b>Definition:</b> traversal.cpp:55</div></div>
+<div class="ttc" id="atraversal_8h_html_a93b1b8a7e028e05a08fc7cf924eac62d"><div class="ttname"><a href="traversal_8h.html#a93b1b8a7e028e05a08fc7cf924eac62d">traverse_operations</a></div><div class="ttdeci">void traverse_operations(Start *root)</div><div class="ttdef"><b>Definition:</b> traversal.cpp:183</div></div>
+<div class="ttc" id="atraversal_8h_html_a0d37c402d053dcab99ae56079b76f7be"><div class="ttname"><a href="traversal_8h.html#a0d37c402d053dcab99ae56079b76f7be">traverse_gradient</a></div><div class="ttdeci">void traverse_gradient(Start *root)</div><div class="ttdef"><b>Definition:</b> traversal.cpp:250</div></div>
+<div class="ttc" id="aclassStart_html"><div class="ttname"><a href="classStart.html">Start</a></div><div class="ttdef"><b>Definition:</b> ast.h:91</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

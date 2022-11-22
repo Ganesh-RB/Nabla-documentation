@@ -69,7 +69,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">traversal.h File Reference</div>  </div>
 </div><!--header-->
@@ -112,14 +113,81 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0d37c402d053dcab99ae56079b76f7be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="traversal_8h.html#a0d37c402d053dcab99ae56079b76f7be">traverse_gradient</a> (<a class="el" href="classStart.html">Start</a> *root)</td></tr>
+<tr class="memitem:a0d37c402d053dcab99ae56079b76f7be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="traversal_8h.html#a0d37c402d053dcab99ae56079b76f7be">traverse_gradient</a> (<a class="el" href="classStart.html">Start</a> *<a class="el" href="ast_8h.html#a65b43e4b3c74e00de693bcea66b70b34">root</a>)</td></tr>
 <tr class="separator:a0d37c402d053dcab99ae56079b76f7be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae054de111552d87aece7e13bae4f1fd2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="traversal_8h.html#ae054de111552d87aece7e13bae4f1fd2">traverse_declarations</a> (<a class="el" href="classStart.html">Start</a> *root)</td></tr>
+<tr class="memitem:ae054de111552d87aece7e13bae4f1fd2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="traversal_8h.html#ae054de111552d87aece7e13bae4f1fd2">traverse_declarations</a> (<a class="el" href="classStart.html">Start</a> *<a class="el" href="ast_8h.html#a65b43e4b3c74e00de693bcea66b70b34">root</a>)</td></tr>
 <tr class="separator:ae054de111552d87aece7e13bae4f1fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93b1b8a7e028e05a08fc7cf924eac62d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="traversal_8h.html#a93b1b8a7e028e05a08fc7cf924eac62d">traverse_operations</a> (<a class="el" href="classStart.html">Start</a> *root)</td></tr>
+<tr class="memitem:a93b1b8a7e028e05a08fc7cf924eac62d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="traversal_8h.html#a93b1b8a7e028e05a08fc7cf924eac62d">traverse_operations</a> (<a class="el" href="classStart.html">Start</a> *<a class="el" href="ast_8h.html#a65b43e4b3c74e00de693bcea66b70b34">root</a>)</td></tr>
 <tr class="separator:a93b1b8a7e028e05a08fc7cf924eac62d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4d96e0fb3b0bb1e6b8e2f3b558c36e2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="traversal_8h.html#ad4d96e0fb3b0bb1e6b8e2f3b558c36e2">semantic_error</a> (std::string, int a=0, int b=0, bool print_line=false)</td></tr>
+<tr class="separator:ad4d96e0fb3b0bb1e6b8e2f3b558c36e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a990db2275a6a1fdf258f346daa7b1786"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="traversal_8h.html#a990db2275a6a1fdf258f346daa7b1786">get_line</a> (int)</td></tr>
+<tr class="separator:a990db2275a6a1fdf258f346daa7b1786"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a127c14c07aad4a58bc3b3f1a893823cd"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="traversal_8h.html#a127c14c07aad4a58bc3b3f1a893823cd">filename</a> [50]</td></tr>
+<tr class="separator:a127c14c07aad4a58bc3b3f1a893823cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a990db2275a6a1fdf258f346daa7b1786"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a990db2275a6a1fdf258f346daa7b1786">&#9670;&nbsp;</a></span>get_line()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string get_line </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad4d96e0fb3b0bb1e6b8e2f3b558c36e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4d96e0fb3b0bb1e6b8e2f3b558c36e2">&#9670;&nbsp;</a></span>semantic_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int semantic_error </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>a</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>b</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>print_line</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ae054de111552d87aece7e13bae4f1fd2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae054de111552d87aece7e13bae4f1fd2">&#9670;&nbsp;</a></span>traverse_declarations()</h2>
 
@@ -168,6 +236,21 @@ Functions</h2></td></tr>
           <td class="paramtype"><a class="el" href="classStart.html">Start</a> *&#160;</td>
           <td class="paramname"><em>root</em></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a127c14c07aad4a58bc3b3f1a893823cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a127c14c07aad4a58bc3b3f1a893823cd">&#9670;&nbsp;</a></span>filename</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char filename[50]</td>
         </tr>
       </table>
 </div><div class="memdoc">

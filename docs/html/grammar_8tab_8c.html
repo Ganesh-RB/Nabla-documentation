@@ -89,6 +89,12 @@ $(function() {
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;unordered_map&gt;</code><br />
 <code>#include &quot;<a class="el" href="sym_8h_source.html">sym.h</a>&quot;</code><br />
+<code>#include &lt;cstdio&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;stdexcept&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;array&gt;</code><br />
 <code>#include &quot;<a class="el" href="grammar_8tab_8h_source.html">grammar.tab.h</a>&quot;</code><br />
 <code>#include &lt;limits.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -96,27 +102,31 @@ Include dependency graph for grammar.tab.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="grammar_8tab_8c__incl.png" border="0" usemap="#Transpiler_2grammar_8tab_8c" alt=""/></div>
 <map name="Transpiler_2grammar_8tab_8c" id="Transpiler_2grammar_8tab_8c">
-<area shape="rect" title=" " alt="" coords="460,5,647,32"/>
+<area shape="rect" title=" " alt="" coords="659,5,845,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,72,107"/>
 <area shape="rect" title=" " alt="" coords="97,80,167,107"/>
 <area shape="rect" title=" " alt="" coords="191,80,262,107"/>
 <area shape="rect" title=" " alt="" coords="286,80,357,107"/>
 <area shape="rect" title=" " alt="" coords="381,80,454,107"/>
 <area shape="rect" title=" " alt="" coords="479,80,553,107"/>
-<area shape="rect" title=" " alt="" coords="555,379,629,405"/>
-<area shape="rect" title=" " alt="" coords="655,379,718,405"/>
-<area shape="rect" title=" " alt="" coords="742,379,866,405"/>
-<area shape="rect" href="sym_8h.html" title=" " alt="" coords="730,304,793,331"/>
-<area shape="rect" href="grammar_8tab_8h.html" title=" " alt="" coords="829,80,947,107"/>
-<area shape="rect" title=" " alt="" coords="971,80,1042,107"/>
-<area shape="rect" title=" " alt="" coords="892,379,972,405"/>
-<area shape="rect" href="ast_8h.html" title=" " alt="" coords="939,229,994,256"/>
-<area shape="rect" href="traversal_8h.html" title=" " alt="" coords="1097,155,1189,181"/>
-<area shape="rect" title=" " alt="" coords="969,304,1036,331"/>
-<area shape="rect" title=" " alt="" coords="1060,304,1137,331"/>
-<area shape="rect" title=" " alt="" coords="1161,304,1236,331"/>
-<area shape="rect" title=" " alt="" coords="1260,304,1311,331"/>
-<area shape="rect" title=" " alt="" coords="1385,229,1471,256"/>
+<area shape="rect" title=" " alt="" coords="545,379,620,405"/>
+<area shape="rect" title=" " alt="" coords="658,379,721,405"/>
+<area shape="rect" title=" " alt="" coords="747,379,871,405"/>
+<area shape="rect" href="sym_8h.html" title=" " alt="" coords="658,304,721,331"/>
+<area shape="rect" title=" " alt="" coords="1123,379,1203,405"/>
+<area shape="rect" title=" " alt="" coords="1389,80,1451,107"/>
+<area shape="rect" title=" " alt="" coords="1263,304,1340,331"/>
+<area shape="rect" title=" " alt="" coords="1475,80,1562,107"/>
+<area shape="rect" title=" " alt="" coords="1587,80,1645,107"/>
+<area shape="rect" title=" " alt="" coords="1669,80,1725,107"/>
+<area shape="rect" href="grammar_8tab_8h.html" title=" " alt="" coords="947,80,1066,107"/>
+<area shape="rect" title=" " alt="" coords="1750,80,1821,107"/>
+<area shape="rect" href="ast_8h.html" title=" " alt="" coords="989,229,1043,256"/>
+<area shape="rect" href="traversal_8h.html" title=" " alt="" coords="1045,155,1137,181"/>
+<area shape="rect" title=" " alt="" coords="945,304,1012,331"/>
+<area shape="rect" title=" " alt="" coords="847,304,921,331"/>
+<area shape="rect" title=" " alt="" coords="1137,304,1188,331"/>
+<area shape="rect" title=" " alt="" coords="1179,229,1264,256"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -201,21 +211,21 @@ Macros</h2></td></tr>
 <tr class="separator:a6419f3fd69ecb6b7e063410fd4e73b2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae67923760a28e3b7ed3aa2cfaef7f9a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grammar_8tab_8c.html#ae67923760a28e3b7ed3aa2cfaef7f9a2">YYLAST</a>&#160;&#160;&#160;79</td></tr>
 <tr class="separator:ae67923760a28e3b7ed3aa2cfaef7f9a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75d260730a6c379a94ea28f63a7b9275"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grammar_8tab_8c.html#a75d260730a6c379a94ea28f63a7b9275">YYNTOKENS</a>&#160;&#160;&#160;69</td></tr>
+<tr class="memitem:a75d260730a6c379a94ea28f63a7b9275"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grammar_8tab_8c.html#a75d260730a6c379a94ea28f63a7b9275">YYNTOKENS</a>&#160;&#160;&#160;70</td></tr>
 <tr class="separator:a75d260730a6c379a94ea28f63a7b9275"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af54ae9e588f0ecc32eabbfdf1959df10"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grammar_8tab_8c.html#af54ae9e588f0ecc32eabbfdf1959df10">YYNNTS</a>&#160;&#160;&#160;25</td></tr>
 <tr class="separator:af54ae9e588f0ecc32eabbfdf1959df10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aceaba8997dc3867478ae3b816647eb7c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grammar_8tab_8c.html#aceaba8997dc3867478ae3b816647eb7c">YYNRULES</a>&#160;&#160;&#160;55</td></tr>
+<tr class="memitem:aceaba8997dc3867478ae3b816647eb7c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grammar_8tab_8c.html#aceaba8997dc3867478ae3b816647eb7c">YYNRULES</a>&#160;&#160;&#160;57</td></tr>
 <tr class="separator:aceaba8997dc3867478ae3b816647eb7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c387ba2caaade8bf8f78ed30023f79f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grammar_8tab_8c.html#a2c387ba2caaade8bf8f78ed30023f79f">YYNSTATES</a>&#160;&#160;&#160;92</td></tr>
+<tr class="memitem:a2c387ba2caaade8bf8f78ed30023f79f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grammar_8tab_8c.html#a2c387ba2caaade8bf8f78ed30023f79f">YYNSTATES</a>&#160;&#160;&#160;94</td></tr>
 <tr class="separator:a2c387ba2caaade8bf8f78ed30023f79f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3f5ed4bc4517eff0ef1b17541192a58"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grammar_8tab_8c.html#af3f5ed4bc4517eff0ef1b17541192a58">YYMAXUTOK</a>&#160;&#160;&#160;309</td></tr>
+<tr class="memitem:af3f5ed4bc4517eff0ef1b17541192a58"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grammar_8tab_8c.html#af3f5ed4bc4517eff0ef1b17541192a58">YYMAXUTOK</a>&#160;&#160;&#160;310</td></tr>
 <tr class="separator:af3f5ed4bc4517eff0ef1b17541192a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad19ee88e33c02c4e720b28f78249bd7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grammar_8tab_8c.html#aad19ee88e33c02c4e720b28f78249bd7">YYTRANSLATE</a>(YYX)</td></tr>
 <tr class="separator:aad19ee88e33c02c4e720b28f78249bd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66cf4d76b944949bcae07cf6656a135a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grammar_8tab_8c.html#a66cf4d76b944949bcae07cf6656a135a">YY_ACCESSING_SYMBOL</a>(State)&#160;&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a4b53a97e60d84c765592be332ef6adce">YY_CAST</a> (<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5">yysymbol_kind_t</a>, yystos[State])</td></tr>
 <tr class="separator:a66cf4d76b944949bcae07cf6656a135a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62bf0ed0c4360b077071b5cf3177823b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grammar_8tab_8c.html#a62bf0ed0c4360b077071b5cf3177823b">YYPACT_NINF</a>&#160;&#160;&#160;(-60)</td></tr>
+<tr class="memitem:a62bf0ed0c4360b077071b5cf3177823b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grammar_8tab_8c.html#a62bf0ed0c4360b077071b5cf3177823b">YYPACT_NINF</a>&#160;&#160;&#160;(-62)</td></tr>
 <tr class="separator:a62bf0ed0c4360b077071b5cf3177823b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8bc340f59d04f9d2e7cac952743f410"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grammar_8tab_8c.html#ae8bc340f59d04f9d2e7cac952743f410">yypact_value_is_default</a>(Yyn)&#160;&#160;&#160;((Yyn) == <a class="el" href="grammar_8tab_8c.html#a62bf0ed0c4360b077071b5cf3177823b">YYPACT_NINF</a>)</td></tr>
 <tr class="separator:ae8bc340f59d04f9d2e7cac952743f410"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -297,60 +307,60 @@ Enumerations</h2></td></tr>
 <br />
 &#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a0b1e06074ab50f4899dc317dc3800241">YYSYMBOL_LOG</a> = 11, 
 <a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ae259f08fcebd0a1c0b6309af32042834">YYSYMBOL_BACKWARD</a> = 12, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ad1029cbb373c1b285196c724a5320996">YYSYMBOL_INT_CONST</a> = 13, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a369902d8f4dffc1892acf8088c27a825">YYSYMBOL_FLOAT_CONST</a> = 14, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a07b005704cbbd948915a29ff75570e95">YYSYMBOL_TRANSPOSE</a> = 13, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ad1029cbb373c1b285196c724a5320996">YYSYMBOL_INT_CONST</a> = 14, 
 <br />
-&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a4fd60bcb7db3229b2592b7523aa21370">YYSYMBOL_CHAR_CONST</a> = 15, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a1326a1a7464be98c50ec49f37bdec4ce">YYSYMBOL_PRINT</a> = 16, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a42081084926e93034271372c9788424d">YYSYMBOL_INC_OP</a> = 17, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ad2be167b6605f5d14b67261f4b04390e">YYSYMBOL_DEC_OP</a> = 18, 
+&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a369902d8f4dffc1892acf8088c27a825">YYSYMBOL_FLOAT_CONST</a> = 15, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a4fd60bcb7db3229b2592b7523aa21370">YYSYMBOL_CHAR_CONST</a> = 16, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a1326a1a7464be98c50ec49f37bdec4ce">YYSYMBOL_PRINT</a> = 17, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a42081084926e93034271372c9788424d">YYSYMBOL_INC_OP</a> = 18, 
 <br />
-&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a966d8a70f384f8245cabae6f35470a7f">YYSYMBOL_LEFT_OP</a> = 19, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ac22d56a74d8f82bbc2928ff357bdd625">YYSYMBOL_RIGHT_OP</a> = 20, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a83723116ebfab3a9c9d7e3c478d9a4e8">YYSYMBOL_LE_OP</a> = 21, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ab94a9dabdac34b7df8ca15332b3896cf">YYSYMBOL_GE_OP</a> = 22, 
+&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ad2be167b6605f5d14b67261f4b04390e">YYSYMBOL_DEC_OP</a> = 19, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a966d8a70f384f8245cabae6f35470a7f">YYSYMBOL_LEFT_OP</a> = 20, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ac22d56a74d8f82bbc2928ff357bdd625">YYSYMBOL_RIGHT_OP</a> = 21, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a83723116ebfab3a9c9d7e3c478d9a4e8">YYSYMBOL_LE_OP</a> = 22, 
 <br />
-&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5aa0da69063b5c804a84b8f5ab5f9a1308">YYSYMBOL_EQ_OP</a> = 23, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ab61729cb3ea2948800a8f68b894ba090">YYSYMBOL_NE_OP</a> = 24, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ae4e9cbffda810fef673f9ff3da068bc2">YYSYMBOL_AT_OP</a> = 25, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ae5ce8d586282105581f88da0cac40903">YYSYMBOL_AND_OP</a> = 26, 
+&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ab94a9dabdac34b7df8ca15332b3896cf">YYSYMBOL_GE_OP</a> = 23, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5aa0da69063b5c804a84b8f5ab5f9a1308">YYSYMBOL_EQ_OP</a> = 24, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ab61729cb3ea2948800a8f68b894ba090">YYSYMBOL_NE_OP</a> = 25, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ae4e9cbffda810fef673f9ff3da068bc2">YYSYMBOL_AT_OP</a> = 26, 
 <br />
-&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a592a047c207f55c9d8f94872ee20d655">YYSYMBOL_OR_OP</a> = 27, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5af3ee4277c02d9a9d00758fc042a88008">YYSYMBOL_MUL_ASSIGN</a> = 28, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a4de22e726d424b1db37159985742fc6a">YYSYMBOL_DIV_ASSIGN</a> = 29, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a414207389463fd73ba4341a3184ed078">YYSYMBOL_MOD_ASSIGN</a> = 30, 
+&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ae5ce8d586282105581f88da0cac40903">YYSYMBOL_AND_OP</a> = 27, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a592a047c207f55c9d8f94872ee20d655">YYSYMBOL_OR_OP</a> = 28, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5af3ee4277c02d9a9d00758fc042a88008">YYSYMBOL_MUL_ASSIGN</a> = 29, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a4de22e726d424b1db37159985742fc6a">YYSYMBOL_DIV_ASSIGN</a> = 30, 
 <br />
-&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a45dd300677808e4747f413d3ede1eb93">YYSYMBOL_ADD_ASSIGN</a> = 31, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a1971575db179b938b8f2f32cd4e92815">YYSYMBOL_AT_ASSIGN</a> = 32, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a26ae84d6088bf832aa2f516645adc270">YYSYMBOL_SUB_ASSIGN</a> = 33, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5abdca2bcddb118692811efcd6e8f16073">YYSYMBOL_LEFT_ASSIGN</a> = 34, 
+&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a414207389463fd73ba4341a3184ed078">YYSYMBOL_MOD_ASSIGN</a> = 31, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a45dd300677808e4747f413d3ede1eb93">YYSYMBOL_ADD_ASSIGN</a> = 32, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a1971575db179b938b8f2f32cd4e92815">YYSYMBOL_AT_ASSIGN</a> = 33, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a26ae84d6088bf832aa2f516645adc270">YYSYMBOL_SUB_ASSIGN</a> = 34, 
 <br />
-&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a1a548f9d1ee1beefb26b9585c46f2364">YYSYMBOL_RIGHT_ASSIGN</a> = 35, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a05486352b272cc5109d840fb024b298a">YYSYMBOL_AND_ASSIGN</a> = 36, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a2327a871c9118101a358dacb4b72b326">YYSYMBOL_XOR_ASSIGN</a> = 37, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5adaf813a3f624ae7115ee4fe30f54bc1b">YYSYMBOL_OR_ASSIGN</a> = 38, 
+&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5abdca2bcddb118692811efcd6e8f16073">YYSYMBOL_LEFT_ASSIGN</a> = 35, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a1a548f9d1ee1beefb26b9585c46f2364">YYSYMBOL_RIGHT_ASSIGN</a> = 36, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a05486352b272cc5109d840fb024b298a">YYSYMBOL_AND_ASSIGN</a> = 37, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a2327a871c9118101a358dacb4b72b326">YYSYMBOL_XOR_ASSIGN</a> = 38, 
 <br />
-&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a3e53ea50490ed8b3baba37966b1c2b9b">YYSYMBOL_TYPE_NAME</a> = 39, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5aa4fdccf756de01782256f91509d8b8dc">YYSYMBOL_CHAR</a> = 40, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a1dfea2e489941a6056360452dbfea0cf">YYSYMBOL_INT</a> = 41, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ab3a0c2d4a6bf8a1a77839291ecbcbe5e">YYSYMBOL_TENSOR</a> = 42, 
+&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5adaf813a3f624ae7115ee4fe30f54bc1b">YYSYMBOL_OR_ASSIGN</a> = 39, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a3e53ea50490ed8b3baba37966b1c2b9b">YYSYMBOL_TYPE_NAME</a> = 40, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5aa4fdccf756de01782256f91509d8b8dc">YYSYMBOL_CHAR</a> = 41, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a1dfea2e489941a6056360452dbfea0cf">YYSYMBOL_INT</a> = 42, 
 <br />
-&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ae66808b1803befc2fa27640f0ebb7fb3">YYSYMBOL_FLOAT</a> = 43, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a041e5eaa4d918893fa77319969ee8599">YYSYMBOL_CNS</a> = 44, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a90e8e2075bbc26f45047a89b16d6c0fe">YYSYMBOL_VAR</a> = 45, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a0f624dfc72ea760976832115f2731830">YYSYMBOL_BOOL</a> = 46, 
+&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ab3a0c2d4a6bf8a1a77839291ecbcbe5e">YYSYMBOL_TENSOR</a> = 43, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ae66808b1803befc2fa27640f0ebb7fb3">YYSYMBOL_FLOAT</a> = 44, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a041e5eaa4d918893fa77319969ee8599">YYSYMBOL_CNS</a> = 45, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a90e8e2075bbc26f45047a89b16d6c0fe">YYSYMBOL_VAR</a> = 46, 
 <br />
-&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a288ecde5407e4a08c739d8838032f0cb">YYSYMBOL_IF</a> = 47, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a558d1003b41a22b3f6cd645c731aa7fd">YYSYMBOL_ELIF</a> = 48, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a85092bf6024b847e87a264687b36ba21">YYSYMBOL_ELSE</a> = 49, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5add417cd3d1a46c4699377172306cd0f9">YYSYMBOL_LOOP</a> = 50, 
+&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a0f624dfc72ea760976832115f2731830">YYSYMBOL_BOOL</a> = 47, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a288ecde5407e4a08c739d8838032f0cb">YYSYMBOL_IF</a> = 48, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a558d1003b41a22b3f6cd645c731aa7fd">YYSYMBOL_ELIF</a> = 49, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a85092bf6024b847e87a264687b36ba21">YYSYMBOL_ELSE</a> = 50, 
 <br />
-&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5afc675327ba4b7260198a650d53e1d477">YYSYMBOL_ENDIF</a> = 51, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a0b2764a38a815cf3a68eb598c72dedff">YYSYMBOL_DECLARE</a> = 52, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ac8a7a697befed188c0fd289b93f22d14">YYSYMBOL_OPERATIONS</a> = 53, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a08979ba87b2276304ac220cdd1301833">YYSYMBOL_GRADIENT</a> = 54, 
+&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5add417cd3d1a46c4699377172306cd0f9">YYSYMBOL_LOOP</a> = 51, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5afc675327ba4b7260198a650d53e1d477">YYSYMBOL_ENDIF</a> = 52, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a0b2764a38a815cf3a68eb598c72dedff">YYSYMBOL_DECLARE</a> = 53, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ac8a7a697befed188c0fd289b93f22d14">YYSYMBOL_OPERATIONS</a> = 54, 
 <br />
-&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a79c3b1f4bf2740e2399bb24c7f428c11">YYSYMBOL_55_</a> = 55, 
+&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a08979ba87b2276304ac220cdd1301833">YYSYMBOL_GRADIENT</a> = 55, 
 <a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5aa557ea525cdefd126662fc810be56155">YYSYMBOL_56_</a> = 56, 
 <a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5aaa1e7c1eea608b9fc233434607fc05e8">YYSYMBOL_57_</a> = 57, 
 <a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a278de9c0207825a9b8f3fb8a017630aa">YYSYMBOL_58_</a> = 58, 
@@ -367,37 +377,38 @@ Enumerations</h2></td></tr>
 <br />
 &#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a82ae5a2738105e0615001a0a117877e7">YYSYMBOL_67_</a> = 67, 
 <a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a066204a33a8169da63353f4353952029">YYSYMBOL_68_</a> = 68, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5aa95ab546bba1fe8445b54f24a1009c5b">YYSYMBOL_YYACCEPT</a> = 69, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a3feae0d272c5d7b706c8acc9e732687f">YYSYMBOL_start</a> = 70, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ae15ae4cc6b595da0a527522fe1c2fba5">YYSYMBOL_69_</a> = 69, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5aa95ab546bba1fe8445b54f24a1009c5b">YYSYMBOL_YYACCEPT</a> = 70, 
 <br />
-&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5afd9378c61f65c36fa95bb4605c2cb27f">YYSYMBOL_declarations</a> = 71, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ab8de545d051ef38d33131b1f6a706ebe">YYSYMBOL_decl_list</a> = 72, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a5f873b43245fee1980f8efd90b3a4bf4">YYSYMBOL_decl</a> = 73, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a1200e6885ae16bc5ce2021e12c38177c">YYSYMBOL_grad_specifier</a> = 74, 
+&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a3feae0d272c5d7b706c8acc9e732687f">YYSYMBOL_start</a> = 71, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5afd9378c61f65c36fa95bb4605c2cb27f">YYSYMBOL_declarations</a> = 72, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ab8de545d051ef38d33131b1f6a706ebe">YYSYMBOL_decl_list</a> = 73, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a5f873b43245fee1980f8efd90b3a4bf4">YYSYMBOL_decl</a> = 74, 
 <br />
-&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ae7329359bfa3d1578021ae7435409fc5">YYSYMBOL_type_specifier</a> = 75, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a688137ffdad102f73cd370d1151f1f91">YYSYMBOL_init_declarator</a> = 76, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a66c840fd74b0c3af71a4197a43451a2d">YYSYMBOL_declarator</a> = 77, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a342d56a38e493baaa2d90bd4fa43aaf5">YYSYMBOL_initializer</a> = 78, 
+&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a1200e6885ae16bc5ce2021e12c38177c">YYSYMBOL_grad_specifier</a> = 75, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ae7329359bfa3d1578021ae7435409fc5">YYSYMBOL_type_specifier</a> = 76, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a688137ffdad102f73cd370d1151f1f91">YYSYMBOL_init_declarator</a> = 77, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a66c840fd74b0c3af71a4197a43451a2d">YYSYMBOL_declarator</a> = 78, 
 <br />
-&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ad2f4dbc04b29011c8efcb497f47c4f04">YYSYMBOL_initializer_list</a> = 79, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a4056f2d75ca10f682a8c0373f40871da">YYSYMBOL_constant</a> = 80, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5acd391a6f90abe7cd0cb3906749374cee">YYSYMBOL_operations</a> = 81, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ad66aaa346b1ea20388a2d5ed6b6e7877">YYSYMBOL_assign_stmt_list</a> = 82, 
+&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a342d56a38e493baaa2d90bd4fa43aaf5">YYSYMBOL_initializer</a> = 79, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ad2f4dbc04b29011c8efcb497f47c4f04">YYSYMBOL_initializer_list</a> = 80, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a4056f2d75ca10f682a8c0373f40871da">YYSYMBOL_constant</a> = 81, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5acd391a6f90abe7cd0cb3906749374cee">YYSYMBOL_operations</a> = 82, 
 <br />
-&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a7f064a10bd0658b59d50c5e831ec6737">YYSYMBOL_assign_stmt</a> = 83, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5aa16f824d8ef10a1f486cf27328d7e4aa">YYSYMBOL_assign_op</a> = 84, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a41039be29b65779605dc66f0ffa0d516">YYSYMBOL_exp</a> = 85, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a1f7da0dd9a8baed81258838371cec3e4">YYSYMBOL_additive_exp</a> = 86, 
+&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ad66aaa346b1ea20388a2d5ed6b6e7877">YYSYMBOL_assign_stmt_list</a> = 83, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a7f064a10bd0658b59d50c5e831ec6737">YYSYMBOL_assign_stmt</a> = 84, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5aa16f824d8ef10a1f486cf27328d7e4aa">YYSYMBOL_assign_op</a> = 85, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a41039be29b65779605dc66f0ffa0d516">YYSYMBOL_exp</a> = 86, 
 <br />
-&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a199e241c207b6791102be13b091fd9fb">YYSYMBOL_multiplicative_exp</a> = 87, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a4e903cfa911918a0e7f248eb56cce3c4">YYSYMBOL_lib_exp</a> = 88, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ac937ffcdbd2d10a0f0d8808db6500012">YYSYMBOL_lib_funcs</a> = 89, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a66cd537b7369ec2aae198cb76f83f2c1">YYSYMBOL_gradient</a> = 90, 
+&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a1f7da0dd9a8baed81258838371cec3e4">YYSYMBOL_additive_exp</a> = 87, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a199e241c207b6791102be13b091fd9fb">YYSYMBOL_multiplicative_exp</a> = 88, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a4e903cfa911918a0e7f248eb56cce3c4">YYSYMBOL_lib_exp</a> = 89, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5ac937ffcdbd2d10a0f0d8808db6500012">YYSYMBOL_lib_funcs</a> = 90, 
 <br />
-&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a9f0e70d0a8d5b96ca0324d4429eadea5">YYSYMBOL_grad_stmt_list</a> = 91, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5abfc2cc732df687f7e67d2e90600ad9e8">YYSYMBOL_grad_type</a> = 92, 
-<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a3beb441b63bf9654213fb2ada40d2762">YYSYMBOL_grad_stmt</a> = 93
+&#160;&#160;<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a66cd537b7369ec2aae198cb76f83f2c1">YYSYMBOL_gradient</a> = 91, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a9f0e70d0a8d5b96ca0324d4429eadea5">YYSYMBOL_grad_stmt_list</a> = 92, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5abfc2cc732df687f7e67d2e90600ad9e8">YYSYMBOL_grad_type</a> = 93, 
+<a class="el" href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a3beb441b63bf9654213fb2ada40d2762">YYSYMBOL_grad_stmt</a> = 94
 <br />
  }</td></tr>
 <tr class="separator:a20a769e9b8f129abf35d03d3904ec0e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -421,6 +432,8 @@ Functions</h2></td></tr>
 <tr class="separator:af07d89f5ceaea0c7c8252cc41fd75f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a847a2de5c1c28c9d7055a2b89ed7dad7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grammar_8tab_8c.html#a847a2de5c1c28c9d7055a2b89ed7dad7">yyparse</a> (void)</td></tr>
 <tr class="separator:a847a2de5c1c28c9d7055a2b89ed7dad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43b669bccb8bce8ea862a58a9dc116bd"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grammar_8tab_8c.html#a43b669bccb8bce8ea862a58a9dc116bd">exec</a> (const char *cmd)</td></tr>
+<tr class="separator:a43b669bccb8bce8ea862a58a9dc116bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf9e6b7e6f15df4b525a2e7705ba3089"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grammar_8tab_8c.html#abf9e6b7e6f15df4b525a2e7705ba3089">main</a> (int argc, char const *argv[])</td></tr>
 <tr class="separator:abf9e6b7e6f15df4b525a2e7705ba3089"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -1173,7 +1186,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define YYMAXUTOK&#160;&#160;&#160;309</td>
+          <td class="memname">#define YYMAXUTOK&#160;&#160;&#160;310</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1215,7 +1228,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define YYNRULES&#160;&#160;&#160;55</td>
+          <td class="memname">#define YYNRULES&#160;&#160;&#160;57</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1229,7 +1242,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define YYNSTATES&#160;&#160;&#160;92</td>
+          <td class="memname">#define YYNSTATES&#160;&#160;&#160;94</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1243,7 +1256,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define YYNTOKENS&#160;&#160;&#160;69</td>
+          <td class="memname">#define YYNTOKENS&#160;&#160;&#160;70</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1257,7 +1270,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define YYPACT_NINF&#160;&#160;&#160;(-60)</td>
+          <td class="memname">#define YYPACT_NINF&#160;&#160;&#160;(-62)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1789,6 +1802,7 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="a20a769e9b8f129abf35d03d3904ec0e5a8ba4c66411291d3bc92f362efd174e45"></a>YYSYMBOL_EXP&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a20a769e9b8f129abf35d03d3904ec0e5a0b1e06074ab50f4899dc317dc3800241"></a>YYSYMBOL_LOG&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a20a769e9b8f129abf35d03d3904ec0e5ae259f08fcebd0a1c0b6309af32042834"></a>YYSYMBOL_BACKWARD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a20a769e9b8f129abf35d03d3904ec0e5a07b005704cbbd948915a29ff75570e95"></a>YYSYMBOL_TRANSPOSE&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a20a769e9b8f129abf35d03d3904ec0e5ad1029cbb373c1b285196c724a5320996"></a>YYSYMBOL_INT_CONST&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a20a769e9b8f129abf35d03d3904ec0e5a369902d8f4dffc1892acf8088c27a825"></a>YYSYMBOL_FLOAT_CONST&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a20a769e9b8f129abf35d03d3904ec0e5a4fd60bcb7db3229b2592b7523aa21370"></a>YYSYMBOL_CHAR_CONST&#160;</td><td class="fielddoc"></td></tr>
@@ -1831,7 +1845,6 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="a20a769e9b8f129abf35d03d3904ec0e5a0b2764a38a815cf3a68eb598c72dedff"></a>YYSYMBOL_DECLARE&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a20a769e9b8f129abf35d03d3904ec0e5ac8a7a697befed188c0fd289b93f22d14"></a>YYSYMBOL_OPERATIONS&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a20a769e9b8f129abf35d03d3904ec0e5a08979ba87b2276304ac220cdd1301833"></a>YYSYMBOL_GRADIENT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a20a769e9b8f129abf35d03d3904ec0e5a79c3b1f4bf2740e2399bb24c7f428c11"></a>YYSYMBOL_55_&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a20a769e9b8f129abf35d03d3904ec0e5aa557ea525cdefd126662fc810be56155"></a>YYSYMBOL_56_&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a20a769e9b8f129abf35d03d3904ec0e5aaa1e7c1eea608b9fc233434607fc05e8"></a>YYSYMBOL_57_&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a20a769e9b8f129abf35d03d3904ec0e5a278de9c0207825a9b8f3fb8a017630aa"></a>YYSYMBOL_58_&#160;</td><td class="fielddoc"></td></tr>
@@ -1845,6 +1858,7 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="a20a769e9b8f129abf35d03d3904ec0e5ae5cb35764c3243e2f3b30b0663d423e3"></a>YYSYMBOL_66_&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a20a769e9b8f129abf35d03d3904ec0e5a82ae5a2738105e0615001a0a117877e7"></a>YYSYMBOL_67_&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a20a769e9b8f129abf35d03d3904ec0e5a066204a33a8169da63353f4353952029"></a>YYSYMBOL_68_&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a20a769e9b8f129abf35d03d3904ec0e5ae15ae4cc6b595da0a527522fe1c2fba5"></a>YYSYMBOL_69_&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a20a769e9b8f129abf35d03d3904ec0e5aa95ab546bba1fe8445b54f24a1009c5b"></a>YYSYMBOL_YYACCEPT&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a20a769e9b8f129abf35d03d3904ec0e5a3feae0d272c5d7b706c8acc9e732687f"></a>YYSYMBOL_start&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a20a769e9b8f129abf35d03d3904ec0e5afd9378c61f65c36fa95bb4605c2cb27f"></a>YYSYMBOL_declarations&#160;</td><td class="fielddoc"></td></tr>
@@ -1875,6 +1889,24 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a43b669bccb8bce8ea862a58a9dc116bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43b669bccb8bce8ea862a58a9dc116bd">&#9670;&nbsp;</a></span>exec()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string exec </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>cmd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="af07d89f5ceaea0c7c8252cc41fd75f37"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af07d89f5ceaea0c7c8252cc41fd75f37">&#9670;&nbsp;</a></span>free()</h2>
 
@@ -2256,23 +2288,23 @@ Variables</h2></td></tr>
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="agrammar_8tab_8c_html_a20a769e9b8f129abf35d03d3904ec0e5"><div class="ttname"><a href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5">yysymbol_kind_t</a></div><div class="ttdeci">yysymbol_kind_t</div><div class="ttdef"><b>Definition:</b> grammar.tab.c:138</div></div>
-<div class="ttc" id="agrammar_8tab_8c_html_af60d46806ea315c647784579d7f3b73d"><div class="ttname"><a href="grammar_8tab_8c.html#af60d46806ea315c647784579d7f3b73d">yy_state_t</a></div><div class="ttdeci">yytype_int8 yy_state_t</div><div class="ttdef"><b>Definition:</b> grammar.tab.c:351</div></div>
-<div class="ttc" id="alex_8yy_8c_html_ad4a65b873df5c05570846b5413b41dfd"><div class="ttname"><a href="lex_8yy_8c.html#ad4a65b873df5c05570846b5413b41dfd">if</a></div><div class="ttdeci">if(!(yy_init))</div><div class="ttdef"><b>Definition:</b> lex.yy.c:795</div></div>
+<div class="ttc" id="agrammar_8tab_8c_html_a20a769e9b8f129abf35d03d3904ec0e5"><div class="ttname"><a href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5">yysymbol_kind_t</a></div><div class="ttdeci">yysymbol_kind_t</div><div class="ttdef"><b>Definition:</b> grammar.tab.c:144</div></div>
+<div class="ttc" id="agrammar_8tab_8c_html_af60d46806ea315c647784579d7f3b73d"><div class="ttname"><a href="grammar_8tab_8c.html#af60d46806ea315c647784579d7f3b73d">yy_state_t</a></div><div class="ttdeci">yytype_int8 yy_state_t</div><div class="ttdef"><b>Definition:</b> grammar.tab.c:358</div></div>
+<div class="ttc" id="alex_8yy_8c_html_ad4a65b873df5c05570846b5413b41dfd"><div class="ttname"><a href="lex_8yy_8c.html#ad4a65b873df5c05570846b5413b41dfd">if</a></div><div class="ttdeci">if(!(yy_init))</div><div class="ttdef"><b>Definition:</b> lex.yy.c:798</div></div>
 <div class="ttc" id="agrammar_8tab_8h_html_a15c9f7bd2f0e9686df5d9df4f3314aa9a57461e8aaccf36b978588119b3b3f8a8"><div class="ttname"><a href="grammar_8tab_8h.html#a15c9f7bd2f0e9686df5d9df4f3314aa9a57461e8aaccf36b978588119b3b3f8a8">YYEMPTY</a></div><div class="ttdeci">@ YYEMPTY</div><div class="ttdef"><b>Definition:</b> grammar.tab.h:60</div></div>
-<div class="ttc" id="agrammar_8tab_8c_html_a92593b1fc9021b99ffcfc5d2a89f5ca2"><div class="ttname"><a href="grammar_8tab_8c.html#a92593b1fc9021b99ffcfc5d2a89f5ca2">YYPTRDIFF_T</a></div><div class="ttdeci">#define YYPTRDIFF_T</div><div class="ttdef"><b>Definition:</b> grammar.tab.c:323</div></div>
-<div class="ttc" id="agrammar_8tab_8c_html_a1eea12826e9366705730412c56defe4c"><div class="ttname"><a href="grammar_8tab_8c.html#a1eea12826e9366705730412c56defe4c">YYPTRDIFF_MAXIMUM</a></div><div class="ttdeci">#define YYPTRDIFF_MAXIMUM</div><div class="ttdef"><b>Definition:</b> grammar.tab.c:324</div></div>
-<div class="ttc" id="agrammar_8tab_8c_html_ab2b4f027a2b092ac14ca4464e7b3db60"><div class="ttname"><a href="grammar_8tab_8c.html#ab2b4f027a2b092ac14ca4464e7b3db60">YYRHSLOC</a></div><div class="ttdeci">#define YYRHSLOC(Rhs, K)</div><div class="ttdef"><b>Definition:</b> grammar.tab.c:857</div></div>
-<div class="ttc" id="aunionYYSTYPE_html"><div class="ttname"><a href="unionYYSTYPE.html">YYSTYPE</a></div><div class="ttdef"><b>Definition:</b> grammar.tab.h:122</div></div>
-<div class="ttc" id="agrammar_8tab_8c_html_af3f5ed4bc4517eff0ef1b17541192a58"><div class="ttname"><a href="grammar_8tab_8c.html#af3f5ed4bc4517eff0ef1b17541192a58">YYMAXUTOK</a></div><div class="ttdeci">#define YYMAXUTOK</div><div class="ttdef"><b>Definition:</b> grammar.tab.c:577</div></div>
-<div class="ttc" id="agrammar_8tab_8c_html_a7d535939e93253736c6eeda569d24de5"><div class="ttname"><a href="grammar_8tab_8c.html#a7d535939e93253736c6eeda569d24de5">YYSIZE_T</a></div><div class="ttdeci">#define YYSIZE_T</div><div class="ttdef"><b>Definition:</b> grammar.tab.c:337</div></div>
-<div class="ttc" id="agrammar_8tab_8c_html_a4b53a97e60d84c765592be332ef6adce"><div class="ttname"><a href="grammar_8tab_8c.html#a4b53a97e60d84c765592be332ef6adce">YY_CAST</a></div><div class="ttdeci">#define YY_CAST(Type, Val)</div><div class="ttdef"><b>Definition:</b> grammar.tab.c:120</div></div>
-<div class="ttc" id="agrammar_8tab_8c_html_a20a769e9b8f129abf35d03d3904ec0e5a12c1e8bf6f8dfd4f8dd46a667481e96e"><div class="ttname"><a href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a12c1e8bf6f8dfd4f8dd46a667481e96e">YYSYMBOL_YYUNDEF</a></div><div class="ttdeci">@ YYSYMBOL_YYUNDEF</div><div class="ttdef"><b>Definition:</b> grammar.tab.c:143</div></div>
-<div class="ttc" id="agrammar_8tab_8c_html_a9e2c7c7373b818c86b2df7106a92327c"><div class="ttname"><a href="grammar_8tab_8c.html#a9e2c7c7373b818c86b2df7106a92327c">yychar</a></div><div class="ttdeci">int yychar</div><div class="ttdef"><b>Definition:</b> grammar.tab.c:1090</div></div>
-<div class="ttc" id="agrammar_8tab_8c_html_af2e4a0ea3879fcb3f8e84faa1e551202"><div class="ttname"><a href="grammar_8tab_8c.html#af2e4a0ea3879fcb3f8e84faa1e551202">YYSIZEOF</a></div><div class="ttdeci">#define YYSIZEOF(X)</div><div class="ttdef"><b>Definition:</b> grammar.tab.c:347</div></div>
-<div class="ttc" id="astructYYLTYPE_html"><div class="ttname"><a href="structYYLTYPE.html">YYLTYPE</a></div><div class="ttdef"><b>Definition:</b> grammar.tab.h:172</div></div>
-<div class="ttc" id="agrammar_8tab_8c_html_afcd15dd0fa87ffba0371c6d6a0cc9631"><div class="ttname"><a href="grammar_8tab_8c.html#afcd15dd0fa87ffba0371c6d6a0cc9631">YYSTACK_GAP_MAXIMUM</a></div><div class="ttdeci">#define YYSTACK_GAP_MAXIMUM</div><div class="ttdef"><b>Definition:</b> grammar.tab.c:513</div></div>
-<div class="ttc" id="agrammar_8tab_8c_html_a25298af10c853371e8da3227e3feaaa0"><div class="ttname"><a href="grammar_8tab_8c.html#a25298af10c853371e8da3227e3feaaa0">YY_</a></div><div class="ttdeci">#define YY_(Msgid)</div><div class="ttdef"><b>Definition:</b> grammar.tab.c:364</div></div>
+<div class="ttc" id="agrammar_8tab_8c_html_a92593b1fc9021b99ffcfc5d2a89f5ca2"><div class="ttname"><a href="grammar_8tab_8c.html#a92593b1fc9021b99ffcfc5d2a89f5ca2">YYPTRDIFF_T</a></div><div class="ttdeci">#define YYPTRDIFF_T</div><div class="ttdef"><b>Definition:</b> grammar.tab.c:330</div></div>
+<div class="ttc" id="agrammar_8tab_8c_html_a1eea12826e9366705730412c56defe4c"><div class="ttname"><a href="grammar_8tab_8c.html#a1eea12826e9366705730412c56defe4c">YYPTRDIFF_MAXIMUM</a></div><div class="ttdeci">#define YYPTRDIFF_MAXIMUM</div><div class="ttdef"><b>Definition:</b> grammar.tab.c:331</div></div>
+<div class="ttc" id="agrammar_8tab_8c_html_ab2b4f027a2b092ac14ca4464e7b3db60"><div class="ttname"><a href="grammar_8tab_8c.html#ab2b4f027a2b092ac14ca4464e7b3db60">YYRHSLOC</a></div><div class="ttdeci">#define YYRHSLOC(Rhs, K)</div><div class="ttdef"><b>Definition:</b> grammar.tab.c:865</div></div>
+<div class="ttc" id="aunionYYSTYPE_html"><div class="ttname"><a href="unionYYSTYPE.html">YYSTYPE</a></div><div class="ttdef"><b>Definition:</b> grammar.tab.h:123</div></div>
+<div class="ttc" id="agrammar_8tab_8c_html_af3f5ed4bc4517eff0ef1b17541192a58"><div class="ttname"><a href="grammar_8tab_8c.html#af3f5ed4bc4517eff0ef1b17541192a58">YYMAXUTOK</a></div><div class="ttdeci">#define YYMAXUTOK</div><div class="ttdef"><b>Definition:</b> grammar.tab.c:584</div></div>
+<div class="ttc" id="agrammar_8tab_8c_html_a7d535939e93253736c6eeda569d24de5"><div class="ttname"><a href="grammar_8tab_8c.html#a7d535939e93253736c6eeda569d24de5">YYSIZE_T</a></div><div class="ttdeci">#define YYSIZE_T</div><div class="ttdef"><b>Definition:</b> grammar.tab.c:344</div></div>
+<div class="ttc" id="agrammar_8tab_8c_html_a4b53a97e60d84c765592be332ef6adce"><div class="ttname"><a href="grammar_8tab_8c.html#a4b53a97e60d84c765592be332ef6adce">YY_CAST</a></div><div class="ttdeci">#define YY_CAST(Type, Val)</div><div class="ttdef"><b>Definition:</b> grammar.tab.c:126</div></div>
+<div class="ttc" id="agrammar_8tab_8c_html_a20a769e9b8f129abf35d03d3904ec0e5a12c1e8bf6f8dfd4f8dd46a667481e96e"><div class="ttname"><a href="grammar_8tab_8c.html#a20a769e9b8f129abf35d03d3904ec0e5a12c1e8bf6f8dfd4f8dd46a667481e96e">YYSYMBOL_YYUNDEF</a></div><div class="ttdeci">@ YYSYMBOL_YYUNDEF</div><div class="ttdef"><b>Definition:</b> grammar.tab.c:149</div></div>
+<div class="ttc" id="agrammar_8tab_8c_html_a9e2c7c7373b818c86b2df7106a92327c"><div class="ttname"><a href="grammar_8tab_8c.html#a9e2c7c7373b818c86b2df7106a92327c">yychar</a></div><div class="ttdeci">int yychar</div><div class="ttdef"><b>Definition:</b> grammar.tab.c:1098</div></div>
+<div class="ttc" id="agrammar_8tab_8c_html_af2e4a0ea3879fcb3f8e84faa1e551202"><div class="ttname"><a href="grammar_8tab_8c.html#af2e4a0ea3879fcb3f8e84faa1e551202">YYSIZEOF</a></div><div class="ttdeci">#define YYSIZEOF(X)</div><div class="ttdef"><b>Definition:</b> grammar.tab.c:354</div></div>
+<div class="ttc" id="astructYYLTYPE_html"><div class="ttname"><a href="structYYLTYPE.html">YYLTYPE</a></div><div class="ttdef"><b>Definition:</b> grammar.tab.h:173</div></div>
+<div class="ttc" id="agrammar_8tab_8c_html_afcd15dd0fa87ffba0371c6d6a0cc9631"><div class="ttname"><a href="grammar_8tab_8c.html#afcd15dd0fa87ffba0371c6d6a0cc9631">YYSTACK_GAP_MAXIMUM</a></div><div class="ttdeci">#define YYSTACK_GAP_MAXIMUM</div><div class="ttdef"><b>Definition:</b> grammar.tab.c:520</div></div>
+<div class="ttc" id="agrammar_8tab_8c_html_a25298af10c853371e8da3227e3feaaa0"><div class="ttname"><a href="grammar_8tab_8c.html#a25298af10c853371e8da3227e3feaaa0">YY_</a></div><div class="ttdeci">#define YY_(Msgid)</div><div class="ttdef"><b>Definition:</b> grammar.tab.c:371</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

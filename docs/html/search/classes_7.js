@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['mul_191',['Mul',['../classMul.html',1,'']]],
-  ['multiply_192',['Multiply',['../classMultiply.html',1,'']]]
+  ['mul_199',['Mul',['../classnb_1_1Mul.html',1,'nb']]],
+  ['multiply_200',['Multiply',['../classnb_1_1Multiply.html',1,'nb']]]
 ];

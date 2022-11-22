@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['add_10',['Add',['../classAdd.html',1,'Add'],['../classAdd.html#a1da7eebfdf230116db9f422cdb07b382',1,'Add::Add()'],['../Tensor_8cpp.html#a5cfd2348f092aabb98fd12cfcc30a4a8',1,'add(Tensor a, Tensor b):&#160;Tensor.cpp'],['../Tensor_8h.html#a5cfd2348f092aabb98fd12cfcc30a4a8',1,'add(Tensor a, Tensor b):&#160;Tensor.cpp']]],
-  ['add_5fcount_11',['add_count',['../classAdd.html#a9de2138e15d135fcbba542e54d4b30f1',1,'Add']]],
+  ['add_10',['Add',['../classnb_1_1Add.html',1,'nb::Add'],['../classnb_1_1Add.html#af0da7cc968176b29049f42a306fed07d',1,'nb::Add::Add()'],['../namespacenb.html#a9548bb4c4c6b6e0dfc4f76fe9cd42420',1,'nb::add()']]],
+  ['add_5fcount_11',['add_count',['../classnb_1_1Add.html#a327216e2801e89a69daf7ae4cf75e376',1,'nb::Add']]],
   ['assgnstmt_12',['AssgnStmt',['../classAssgnStmt.html',1,'AssgnStmt'],['../classAssgnStmt.html#ae94a2fee4646f85e5c5da5431fc6a68a',1,'AssgnStmt::AssgnStmt()']]],
   ['assgnstmtlist_13',['AssgnStmtList',['../classStart.html#ab22046555ae4f1c6c126d8b60d55bb02',1,'Start']]],
   ['assignmentoperator_14',['AssignmentOperator',['../ast_8h.html#a08615d7e940358fbdbebefd7c71e4211',1,'ast.h']]],

@@ -69,75 +69,54 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a href="https://github.com/IITH-COMPILERS2/compilers-2-project-team-9-aug22/actions/workflows/lexer.yml"><object type="image/svg+xml" data="https://github.com/IITH-COMPILERS2/compilers-2-project-team-9-aug22/actions/workflows/lexer.yml/badge.svg" style="pointer-events: none;">Lexer Build Status</object></a> <a href="https://github.com/IITH-COMPILERS2/compilers-2-project-team-9-aug22/actions/workflows/parser.yml"><object type="image/svg+xml" data="https://github.com/IITH-COMPILERS2/compilers-2-project-team-9-aug22/actions/workflows/parser.yml/badge.svg" style="pointer-events: none;">Parser Build Status</object></a></p>
-<p><img src="Whitepaper/images/nabla.png" alt="alt text" class="inline"/> <br  />
+<div class="image">
+<img src="nabla.png" alt=""/>
+<div class="caption">
+alt text</div></div>
+   <p><br  />
 </p>
 <p>Nabla is a Domain specific langauge built for the purpose of <a class="el" href="classTensor.html">Tensor</a> Operations and Automatic differentiation <br  />
  It uses dynamically built computational graphs for back-propagation. Take a look at the code below</p>
-<div class="fragment"><div class="line">{</div>
-<div class="line">var Tensor a[2][2]  = [[2.0, 3.0],[4.0, 5.0]];</div>
-<div class="line">var Tensor b[2][1]  = [3, 1];</div>
-<div class="line">var Tensor c[2][1]  = [4,6];</div>
-<div class="line">var Tensor z[2][1];</div>
-<div class="line">cns float d = 6.5;</div>
-<div class="line">var float m = 7.0;</div>
-<div class="line">z = a@b + c;</div>
-<div class="line">print(z);</div>
-<div class="line">cns int k  = 5;</div>
-<div class="line">cns int z = k &gt;&gt; 1;</div>
-<div class="line">if(k &gt; 0 || a[0][1]){  </div>
-<div class="line">        c  = a + b;</div>
-<div class="line">        if(b &gt;= 0){</div>
-<div class="line">            b  = b*25;</div>
-<div class="line">        }</div>
-<div class="line">        endif</div>
+<div class="fragment"><div class="line">declare{</div>
+<div class="line">    cns int a = 6;</div>
+<div class="line">    var int c;</div>
 <div class="line">}</div>
-<div class="line">elif(k &lt; 0){</div>
-<div class="line">        c = a - b;</div>
+<div class="line">operations{</div>
+<div class="line">    c = sin(a+cos(a));  </div>
+<div class="line">    d = exp(c);</div>
 <div class="line">}</div>
-<div class="line">else{</div>
-<div class="line">        c = a;</div>
-<div class="line">}</div>
-<div class="line">endif</div>
-<div class="line"> </div>
-<div class="line">loop(int i = 0; i&lt; 10; i++){</div>
-<div class="line">    c = c + a;</div>
-<div class="line">}</div>
-<div class="line">float k = 1.0; </div>
-<div class="line">var Tensor x[2][2]  = [[2.0, 3.0],[4.0, 5.0]];</div>
-<div class="line">var Tensor y[2][1]  = [5.0 , 6.0];</div>
-<div class="line">var Tensor p [2][1];</div>
-<div class="line">var Tensor Final[2][1];</div>
-<div class="line">p = m*x@y;</div>
-<div class="line">Final = cos(p + z);</div>
-<div class="line">backward(Final);</div>
-<div class="line">print(grad(a));</div>
-<div class="line">print(grad(m));</div>
+<div class="line">gradient{</div>
+<div class="line">    backward(d);</div>
+<div class="line">    grad(d);</div>
+<div class="line">    grad(c);</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>The code will be converted into a computational graph(internally) of the form:- After this we will be able to use the chain rule to calculate the gradients of the Final variable in terms of the beginning variables</p>
-<p><img src="Whitepaper/images/comp-graph.png" alt="alt text" class="inline"/></p>
-<h1><a class="anchor" id="autotoc_md21"></a>
+<div class="image">
+<img src="comp_graph2.png" alt=""/>
+<div class="caption">
+alt text</div></div>
+   <h1><a class="anchor" id="autotoc_md1"></a>
+Documentation</h1>
+<p>To generate the documentation for the project, run the following command in the root directory of the project</p>
+<div class="fragment"><div class="line">doxygen</div>
+</div><!-- fragment --><p>The documentation for the project can be found <a href="https://ganesh-rb.github.io/Nabla-documentation/">here</a></p>
+<h1><a class="anchor" id="autotoc_md2"></a>
 The Class Hierarchy</h1>
 <hr  />
-<p><img src="Whitepaper/images/class_hierarchy.png" alt="alt text" class="inline"/></p>
-<p>To see the class Hierarchy please switch to the branch <code>AST</code> and see files <code>ast.h</code> and <code>ast.cpp</code></p>
-<h1><a class="anchor" id="autotoc_md23"></a>
-Testing The Lexer</h1>
+<div class="image">
+<img src="class_hierarchy.png" alt=""/>
+<div class="caption">
+alt text</div></div>
+   <p>To see the class Hierarchy please switch to the branch <code>AST</code> and see files <code><a class="el" href="ast_8h.html">ast.h</a></code> and <code><a class="el" href="ast_8cpp.html">ast.cpp</a></code></p>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Testing</h1>
 <hr  />
-<p>Run the Following commands to test the Lexer, </p><div class="fragment"><div class="line">make build</div>
-<div class="line">make test_lexer</div>
-</div><!-- fragment --><p>To run the parser and the Lexer jointly please use the following commands</p>
-<div class="fragment"><div class="line">make build</div>
-<div class="line">make test_parser</div>
-</div><!-- fragment --><p>These will also work</p>
-<div class="fragment"><div class="line">yacc -d Parser/grammar.y &amp;&amp; lex Lexer/lexer.l &amp;&amp; gcc lex.yy.c y.tab.c -o exec </div>
-<div class="line">./exec &lt; Parser/Test/err_ex01.nb  </div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md25"></a>
-Symbol table</h1>
-<hr  />
-<p>Please switch to the branch symbol-table</p>
-<div class="fragment"><div class="line">git checkout symbol-table</div>
-<div class="line">make build</div>
-<div class="line">echo &quot;Now run any Test case under Parser/Test&quot;</div>
+<p>Go inside the lexer folder and run these commands to test lexer </p><div class="fragment"><div class="line">make </div>
+<div class="line">make test</div>
+</div><!-- fragment --><p>Go inside the Parser folder and run these commands to test Parser </p><div class="fragment"><div class="line">make </div>
+<div class="line">make test</div>
+</div><!-- fragment --><p>Go inside the Semantic folder and run these commands to test semantic analysis </p><div class="fragment"><div class="line">make </div>
+<div class="line">make test</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

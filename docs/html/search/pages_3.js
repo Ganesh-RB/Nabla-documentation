@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['transpilation_20of_20nabla_20to_20c_2b_2b_389',['Transpilation of Nabla to C++',['../md_Transpiler_Readme.html',1,'']]]
+  ['syntax_20analysis_404',['Syntax Analysis',['../md_Parser_Readme.html',1,'']]],
+  ['semantic_20analysis_405',['Semantic Analysis',['../md_Semantic_Readme.html',1,'']]]
 ];

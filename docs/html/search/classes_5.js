@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['gradstmt_186',['GradStmt',['../classGradStmt.html',1,'']]],
-  ['graph_187',['Graph',['../classGraph.html',1,'']]]
+  ['gradstmt_194',['GradStmt',['../classGradStmt.html',1,'']]],
+  ['graph_195',['Graph',['../classnb_1_1Graph.html',1,'nb']]]
 ];
