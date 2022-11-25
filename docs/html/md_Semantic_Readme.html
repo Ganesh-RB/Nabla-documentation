@@ -68,22 +68,25 @@ $(function() {
 <div class="title">Semantic Analysis </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md16"></a>
+<div class="textblock"><p><a href="https://github.com/IITH-COMPILERS2/compilers-2-project-team-9-aug22/actions/workflows/semantic.yml"><object type="image/svg+xml" data="https://github.com/IITH-COMPILERS2/compilers-2-project-team-9-aug22/actions/workflows/semantic.yml/badge.svg" style="pointer-events: none;">Semantic Build Status</object></a></p>
+<h1><a class="anchor" id="autotoc_md32"></a>
 Introduction</h1>
-<h1><a class="anchor" id="autotoc_md17"></a>
-PPT and video links</h1>
-<h1><a class="anchor" id="autotoc_md18"></a>
-Language Specification</h1>
-<h1><a class="anchor" id="autotoc_md19"></a>
-Semantic Analysis</h1>
-<h2><a class="anchor" id="autotoc_md20"></a>
+<p>Semantic analysis is phase of compiler design where the program is checked for its correctness.</p>
+<h2><a class="anchor" id="autotoc_md33"></a>
 Abstract Syntax Tree</h2>
-<h2><a class="anchor" id="autotoc_md21"></a>
+<div class="image">
+<img src="class_hierarchy.png" alt=""/>
+<div class="caption">
+Class Hierarchy</div></div>
+   <h2><a class="anchor" id="autotoc_md34"></a>
+Symbol Table</h2>
+<p>Symbol table is implemented in <code><a class="el" href="sym_8h.html">sym.h</a></code> file. It is a hash table with chaining. It is implemented using <code>unordered_map</code> from <code>unordered_map</code> library.</p>
+<h2><a class="anchor" id="autotoc_md35"></a>
 Semantic Analyzer</h2>
-<h2><a class="anchor" id="autotoc_md22"></a>
-Error Handling</h2>
-<h2><a class="anchor" id="autotoc_md23"></a>
+<p>Semantic analyzer is implemented in <code><a class="el" href="traversal_8h.html">traversal.h</a></code> file.</p>
+<h2><a class="anchor" id="autotoc_md36"></a>
 Testing</h2>
+<p>run <code>make test</code> to run the tests. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

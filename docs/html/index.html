@@ -72,45 +72,122 @@ $(function() {
 <div class="image">
 <img src="nabla.png" alt=""/>
 <div class="caption">
-Nabla Image</div></div>
+Nabla</div></div>
    <p><br  />
 </p>
 <p>Nabla is a Domain specific langauge built for the purpose of Tensor Operations and Automatic differentiation <br  />
- It uses dynamically built computational graphs for back-propagation. Take a look at the code below</p>
-<div class="fragment"><div class="line">declare{</div>
-<div class="line">    cns int a = 6;</div>
-<div class="line">    var int c;</div>
-<div class="line">    var int d;</div>
+ It uses dynamically built computational graphs for back-propagation.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Table of Contents</h1>
+<ul>
+<li><a href="#nabla">Nabla</a><ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#example">Example</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#stages">Stages</a><ul>
+<li><a href="#lexer">Lexer</a></li>
+<li><a href="#parser">Parser</a></li>
+<li><a href="#semantic-analyzer">Semantic Analysis</a></li>
+<li><a href="#transpilation">Transpiler</a></li>
+</ul>
+</li>
+<li><a href="#class-hierarchy">class Hierarchy</a></li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#license">License</a></li>
+<li><a href="#acknowledgements">Acknowledgements</a></li>
+</ul>
+</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Example</h1>
+<div class="fragment"><div class="line">declare</div>
+<div class="line">{</div>
+<div class="line">    var Tensor a[2][1] = [[1],[2]];</div>
+<div class="line">    var Tensor b[1][2] = [[1,2]];</div>
+<div class="line">    var Tensor c[1][2] = [[1,2]];</div>
+<div class="line">    var Tensor d[1][2] = [[5,6]];</div>
+<div class="line">    var Tensor e[1][2] = [[53,64]];</div>
+<div class="line">    var Tensor g[1][2] = [[53,64]];</div>
+<div class="line">    var Tensor fin[1][1];</div>
 <div class="line">}</div>
-<div class="line">operations{</div>
-<div class="line">    c = sin(a+cos(a));  </div>
-<div class="line">    d = exp(c);</div>
+<div class="line">operations</div>
+<div class="line">{</div>
+<div class="line">    fin = sin(e+cos(2*b))*exp(d)@a;</div>
 <div class="line">}</div>
-<div class="line">gradient{</div>
-<div class="line">    backward(d);</div>
+<div class="line">gradient</div>
+<div class="line">{</div>
+<div class="line">    backward(fin);</div>
+<div class="line">    print(a);</div>
+<div class="line">    print(b);</div>
+<div class="line">    print(d);</div>
+<div class="line">    print(e);</div>
+<div class="line">    grad(a);</div>
+<div class="line">    grad(b);</div>
 <div class="line">    grad(d);</div>
-<div class="line">    backward(c);</div>
-<div class="line">    grad(c);</div>
+<div class="line">    grad(e);</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>The code will be converted into a computational graph(internally) of the form:- After this we will be able to use the chain rule to calculate the gradients of the Final variable in terms of the beginning variables</p>
 <div class="image">
-<img src="comp_graph2.png" alt=""/>
+<img src="computational_graph.jpg" alt=""/>
 <div class="caption">
 Computational graph</div></div>
-   <h1><a class="anchor" id="autotoc_md1"></a>
+   <h1><a class="anchor" id="autotoc_md3"></a>
+Installation</h1>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Requirements</h2>
+<ul>
+<li><a href="https://www.gnu.org/software/make/">Make</a></li>
+<li><a href="https://github.com/westes/flex">Flex</a></li>
+<li><a href="https://www.gnu.org/software/bison/">Bison</a></li>
+<li><a href="https://gcc.gnu.org/">g++ 9.3.0 or higher</a></li>
+<li><a href="https://clang.llvm.org/">clang++ 10.0.0 or higher</a></li>
+<li><a href="https://www.doxygen.nl/download.html">Doxygen</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Steps</h2>
+<ol type="1">
+<li>Clone the repository</li>
+</ol>
+<div class="fragment"><div class="line">git clone https://github.com/IITH-COMPILERS2/compilers-2-project-team-9-aug22.git</div>
+</div><!-- fragment --><ol type="1">
+<li>Run the makefile</li>
+</ol>
+<div class="fragment"><div class="line">cd compilers-2-project-team-9-aug22</div>
+<div class="line">make</div>
+</div><!-- fragment --><ol type="1">
+<li>Run the tests (optional)</li>
+</ol>
+<div class="fragment"><div class="line">make test</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md6"></a>
 Documentation</h1>
 <p>To generate the documentation for the project, run the following command in the root directory of the project</p>
 <div class="fragment"><div class="line">doxygen</div>
 </div><!-- fragment --><p>The documentation for the project can be found <a href="https://ganesh-rb.github.io/Nabla-documentation/">here</a></p>
-<h1><a class="anchor" id="autotoc_md2"></a>
-The Class Hierarchy</h1>
+<h1><a class="anchor" id="autotoc_md7"></a>
+Stages</h1>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Lexer</h2>
+<p>The lexer is the first stage of the compiler. It takes the input file and converts it into a stream of tokens. The tokens are then passed to the parser.</p>
+<h2><a class="anchor" id="autotoc_md9"></a>
+Parser</h2>
+<p>The parser is the second stage of the compiler. It takes the stream of tokens from the lexer and converts it into an Abstract Syntax Tree (AST). The AST is then passed to the semantic analyzer.</p>
+<h2><a class="anchor" id="autotoc_md10"></a>
+Semantic Analyzer</h2>
+<p>The semantic analyzer is the third stage of the compiler. It takes the AST from the parser and performs semantic analysis on it. The AST is then passed to the code generator.</p>
+<h2><a class="anchor" id="autotoc_md11"></a>
+Transpilation</h2>
+<p>The transpiler is the fourth stage of the compiler. It takes the AST from the semantic analyzer and converts it into a C++ file. The C++ file is then compiled and executed.</p>
+<h1><a class="anchor" id="autotoc_md12"></a>
+Class Hierarchy</h1>
 <hr  />
 <div class="image">
 <img src="class_hierarchy.png" alt=""/>
 <div class="caption">
 Class Hierarchy</div></div>
    <p>To see the class Hierarchy please switch to the branch <code>AST</code> and see files <code><a class="el" href="ast_8h.html">ast.h</a></code> and <code><a class="el" href="ast_8cpp.html">ast.cpp</a></code></p>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<h1><a class="anchor" id="autotoc_md14"></a>
 Testing</h1>
 <hr  />
 <p>Go inside the lexer folder and run these commands to test lexer </p><div class="fragment"><div class="line">make </div>
@@ -119,7 +196,21 @@ Testing</h1>
 <div class="line">make test</div>
 </div><!-- fragment --><p>Go inside the Semantic folder and run these commands to test semantic analysis </p><div class="fragment"><div class="line">make </div>
 <div class="line">make test</div>
-</div><!-- fragment --> </div></div><!-- PageDoc -->
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md16"></a>
+Contributing</h1>
+<hr  />
+<p>Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.</p>
+<h1><a class="anchor" id="autotoc_md18"></a>
+License</h1>
+<hr  />
+<p>This project is licensed under the MIT License - see the LICENSE.md file for details</p>
+<h1><a class="anchor" id="autotoc_md20"></a>
+Acknowledgements</h1>
+<hr  />
+<ul>
+<li><a href="https://www.iith.ac.in/cse/ramakrishna">Dr Ramakrishna Upadrasta</a> for his guidance and support </li>
+</ul>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
